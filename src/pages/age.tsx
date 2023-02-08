@@ -5,12 +5,10 @@ import { Inter } from '@next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function WhatsAge() {
   return (
     <Box  height='100vh' display='flex' alignItems='center' background='light'>
-      <Calculator onClick={function (birthYear: number): void {
-        throw new Error('Function not implemented.')
-      } }/>
+      <Age/>
     </Box>
   )
 }
