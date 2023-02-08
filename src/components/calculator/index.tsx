@@ -14,15 +14,25 @@ const Calculadora: React.FC<Props> = () => {
   const calculateYearOfBirth = (currentAge: number, currentMonth: number, currentDay: number) => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const currentMonthZeroIndexed = currentDate.getMonth();
+    const currentMonthZeroIndexed = currentDate.getMonth() + 1;
     const currentDayOfMonth = currentDate.getDate();
-
+  
+    if (currentMonth <= 0 || currentMonth > 12) {
+      // Mensaje de error o alerta para indicar que el mes es inválido
+      return;
+    }
+    
+    if (currentDay <= 0 || currentDay > 31) {
+      // Mensaje de error o alerta para indicar que el día es inválido
+      return;
+    }
+  
     let yearOfBirth = currentYear - currentAge;
     if (currentMonth > currentMonthZeroIndexed || (currentMonth === currentMonthZeroIndexed && currentDay > currentDayOfMonth)) {
       yearOfBirth -= 1;
     }
     setYearOfBirth(yearOfBirth);
-};
+  };
 
   return (
     <Box className="calculadora" maxW='600px' margin='auto' textAlign='center' boxShadow='md' padding='2.5rem 2rem' background='light'>
