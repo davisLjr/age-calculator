@@ -1,6 +1,6 @@
 {
   "name": "in-which-year",
-  "homepage": "https://github.com/davisLjr/age-calculator.git",
+  "homepage": "http://davisLjr.github.io/age-calculator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
