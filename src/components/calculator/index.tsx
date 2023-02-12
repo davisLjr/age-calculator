@@ -35,39 +35,47 @@ const Calculadora: React.FC<Props> = () => {
   };
 
   return (
-    <Box className="calculadora" maxW='600px' margin='auto' textAlign='center' boxShadow='md' padding='2.5rem 2rem' background='light'>
+    <Box className="calculadora" maxW='600px' margin='auto' textAlign='center' boxShadow='md' padding={{base:'2.5rem 1rem', md:'2.5rem 2rem'}} minWidth={{base:'95%', md:'auto'}}>
       <Heading size='lg'>Calculadora de año de nacimiento</Heading>
-      <Flex justifyContent='space-between' marginTop='2rem' flexWrap='wrap'>
-        <label htmlFor="age">Edad actual:</label>
+      <Flex justifyContent='space-between' marginTop='2rem' flexWrap='wrap' >
+        <label htmlFor="age" className='label'>Edad actual:</label>
         <Input  
           type="number"
           id="age"
           value={currentAge}
           onChange={(e) => setCurrentAge(parseInt(e.target.value))}
-          width={{sm:'100%', lg:'50%'}}
+          minWidth={{sm:'100%', lg:'50%'}}
+          variant='flushed'
         />
       </Flex>
-      <Flex justifyContent='space-between' flexWrap='wrap' margin='0.5rem 0rem'>
+      <Flex justifyContent='space-between' flexWrap='wrap' margin='0.5rem 0rem' >
         <label htmlFor="month">Mes de nacimiento:</label>
         <Input  
           type="number"
           id="month"
           value={currentMonth}
           onChange={(e) => setCurrentMonth(parseInt(e.target.value))}
-          width={{sm:'100%', lg:'50%'}}
+          minWidth={{sm:'100%', lg:'50%'}}
+          variant='flushed'
         />
       </Flex>
-      <Flex justifyContent='space-between' flexWrap='wrap'>
+      <Flex justifyContent='space-between' flexWrap='wrap' >
         <label htmlFor="day">Día de nacimiento:</label>
         <Input  
           type="number"
           id="day"
           value={currentDay}
           onChange={(e) => setCurrentDay(parseInt(e.target.value))}
-          width={{sm:'100%', lg:'50%'}}
+          minWidth={{sm:'100%', lg:'50%'}}
+          variant='flushed'
         />
       </Flex>
-      <Button onClick={() => calculateYearOfBirth(currentAge, currentMonth, currentDay)} variant='solid' colorScheme='blue' marginTop='1rem' width='100%'>
+      <Button onClick={() => calculateYearOfBirth(currentAge, currentMonth, currentDay)} variant='outline' marginTop='1rem' width='100%'
+        _hover={{
+          background: 'secondary.900',
+          color:'white'
+        }}
+      >
         Calcular año de nacimiento
       </Button>
       <Text mt='1rem' h='1.5rem'>

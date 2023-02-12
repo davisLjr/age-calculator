@@ -6,7 +6,17 @@ import { inputStyles as Input } from "./form";
 const colors = {
   primary: "#00A6FB",
   primaryDark:"#0582CA",
-  secondary: "#1D1E2C",
+  secondary: {
+    900:"#1D1E2C",
+    800:"#282a3e",
+    700:"#30324a",
+    600:"#383a56",
+    500:"#404363",
+    400:"#494b6f",
+    300:"#51537b",
+    200:"#595c88",
+    100:"#616494"
+  },
   light:"#FEFFEA",
   brown: "#DB9065",
   brownHover:"#C6662F"
@@ -60,10 +70,15 @@ const Button = {
       bg: "brown",
     },
     outline: {
-      color: "brown",
-      bg: "light",
-      border: "1px solid",
-      borderColor: "brown",
+      color: "secondary",
+      bg: "white",
+      boxShadow:'none',
+      border:'0.125rem solid',
+      borderColor:'secondary',
+      _hover:{
+        borderColor:'transparent',
+        color:'white',
+      }
     },
     ghost: {
       color: "light",

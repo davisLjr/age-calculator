@@ -15,15 +15,16 @@ const Age: React.FC = () => {
   };
 
   return (
-    <Box className="calculator" maxW='600px' margin='auto' textAlign='center' boxShadow='md' padding='2.5rem 2rem' background='light'>
+    <Box className="calculator" maxW='600px' margin='auto' textAlign='center' boxShadow='md' padding='2.5rem 2rem'>
       <Heading size='lg'>Age Calculator</Heading>
-      <Flex className="input-section" justifyContent='space-between' marginTop='2rem' flexWrap='wrap'>
+      <Flex className="input-section" justifyContent='space-between' marginTop='2rem' flexWrap='wrap' >
         <label>Año de nacimiento:</label>
         <Input
           type="text"
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          width={{sm:'100%', lg:'50%'}}
+          minWidth={{sm:'100%', lg:'50%'}}
+          variant='flushed'
         />
       </Flex>
       <Flex className="input-section" justifyContent='space-between' flexWrap='wrap' margin='0.5rem 0rem'>
@@ -32,19 +33,28 @@ const Age: React.FC = () => {
           type="text"
           value={month}
           onChange={(e) => setMonth(e.target.value)}
-          width={{sm:'100%', lg:'50%'}}
+          minWidth={{sm:'100%', lg:'50%'}}
+          variant='flushed'
         />
       </Flex>
-      <Flex className="input-section" justifyContent='space-between' flexWrap='wrap'>
+      <Flex className="input-section" justifyContent='space-between' flexWrap='wrap' >
         <label>Día de nacimiento:</label>
         <Input
           type="text"
           value={day}
           onChange={(e) => setDay(e.target.value)}
-          width={{sm:'100%', lg:'50%'}}
+          minWidth={{sm:'100%', lg:'50%'}}
+          variant='flushed'
         />
       </Flex>
-      <Button onClick={calculateAge} variant='solid' colorScheme='blue' marginTop='1rem' width='100%'>Calculate</Button>
+      <Button onClick={calculateAge} variant='outline' colorScheme='blue' marginTop='1rem' width='100%'
+        _hover={{
+          background: 'secondary.900',
+          color:'white'
+        }}
+      >
+        Calculate
+      </Button>
       <Text className="result" mt='1rem' h='1.5rem'>
         {age === 0 ? "" : `Tu edad es: ${age} Años`}
       </Text>
@@ -53,3 +63,4 @@ const Age: React.FC = () => {
 };
 
 export default Age;
+

@@ -1,14 +1,17 @@
 export const inputStyles = {
   // Styles for the visual style variations
-  /*baseStyle: {
+  baseStyle: {
     field: {
       outline: "none !important",
       fontSize: "sm",
-      border: "1px solid",
+      //border: "1px solid",
 
       _active: {
         borderColor: "brown",
         boxShadow: "0 0 0 1px var(--chakra-colors-badge)",
+      },
+      _focus: {
+        borderColor:'secondary',
       },
       _invalid: {
         borderColor: "red",
@@ -22,7 +25,17 @@ export const inputStyles = {
       },
     },
   },
-
+  variants: {
+    flushed: {
+      field:{ 
+        _focus:{
+          borderColor:"#3c4044 !important",
+          boxShadow:"0px 1px 0px 0px #3c4044 !important"
+        }
+      }
+    }
+  }
+/*
   variants: {
     outline: {
       field: {
