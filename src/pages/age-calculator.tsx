@@ -1,4 +1,4 @@
-import Age from '@/components/Age'
+import Age from '@/components/age'
 import { Layout } from '@/components/Layout'
 import { Box } from '@chakra-ui/react'
 import { Inter } from '@next/font/google'

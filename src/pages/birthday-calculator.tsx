@@ -1,4 +1,4 @@
-import Calculator from '@/components/Calculator'
+import Calculator from '@/components/calculator'
 import { Layout } from '@/components/Layout'
 import { Box } from '@chakra-ui/react'
 import { Inter } from '@next/font/google'
