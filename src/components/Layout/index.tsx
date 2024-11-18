@@ -15,6 +15,7 @@ interface LayoutProps {
 export const Layout = ({ children, hideHeader = false , hideFooter = false, titles }: LayoutProps) => {
   return (
     <Box className="main-main">
+      <h1 style={{ opacity: 0, height: '1px' }} >Neitrys Barrera</h1>
       {!hideHeader && <Header title={titles} />}
       <main className="main-">{children}</main>
       {!hideFooter && <Footer />}

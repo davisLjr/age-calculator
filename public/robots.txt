@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /admin
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Host
+Host: https://vzla-calculator.vercel.app
+
+# Sitemaps
+Sitemap: https://vzla-calculator.vercel.app/sitemap.xml
